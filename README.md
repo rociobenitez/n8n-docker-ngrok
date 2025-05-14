@@ -89,6 +89,20 @@ cd ~/n8n
 
 ![Contenedor - Docker Desktop](./src/contenedor.webp)
 
+### Alternativa: Uso de Docker Compose para configurar n8n
+
+Si prefieres gestionar tu instancia de n8n utilizando [Docker Compose](https://docs.docker.com/compose/), puedes optar por esta alternativa para simplificar la gestión de los contenedores. **Docker Compose** es una herramienta que permite definir y ejecutar aplicaciones multicontenedor, utilizando un archivo YAML que describe los servicios, redes y volúmenes involucrados.
+
+En lugar de gestionar los contenedores de Docker **manualmente** mediante la interfaz gráfica de _Docker Desktop_, Docker Compose permite **definir todos los parámetros de configuración** (como puertos, volúmenes y variables de entorno) en un solo archivo `docker-compose.yml`. Este archivo facilita la creación, inicio, detención y escalabilidad de los contenedores con un solo comando.
+
+**Uso de Docker Compose:** Una vez que tengas `docker-compose.yml`, puedes iniciar el contenedor de n8n con el siguiente comando desde el directorio donde se encuentra este archivo:
+
+```bash
+docker-compose up -d
+```
+
+Este comando descargará la imagen de n8n (si no la tienes), creará el contenedor según las configuraciones especificadas y lo iniciará en segundo plano.
+
 ## 4. Desplegar la aplicación con Ngrok
 
 Abre la terminal y ejecuta el siguiente comando para exponer el puerto 5555 (o el que hayas especificado) de tu máquina local a Internet a través de Ngrok:
@@ -130,6 +144,7 @@ https://<tu_subdominio_ngrok>.ngrok-free.app/home/workflows
 ## Referencias
 
 - [Docker Installation](https://docs.n8n.io/hosting/installation/docker/)
+- [n8nio/n8n - Docker Image](https://hub.docker.com/r/n8nio/n8n)
 - [n8n Docs](https://docs.n8n.io/)
 - [n8n Docs - Deployment environment variables](https://docs.n8n.io/hosting/configuration/environment-variables/deployment/)
 - [Ngrok](https://ngrok.com/)
