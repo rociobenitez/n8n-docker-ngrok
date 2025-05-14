@@ -1,0 +1,14 @@
+# Ignorar volúmenes de Docker
+volume/
+
+# Archivos y directorios específicos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de editor de código
+.vscode/
+.idea/
+
+# Archivos generados por Docker (logs, etc.)
+docker-compose.override.yml
+*.log
